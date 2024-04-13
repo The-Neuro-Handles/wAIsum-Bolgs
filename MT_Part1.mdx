@@ -1,0 +1,85 @@
+---
+title: 'Exploring Machine Translation with Transformer Models: Part 1'
+author: [{
+    name: 'Ikshwak',
+    avatar: 'https://ui-mdx-files.s3.amazonaws.com/profilepictures/avatar_ikshwak.png'
+},
+{
+    name: 'Pradhyumna Poralla',
+    avatar: 'https://ui-mdx-files.s3.amazonaws.com/profilepictures/avatar_pradhyumna.png'
+},
+{
+    name: 'Lokesh Madem',
+    avatar: 'https://ui-mdx-files.s3.amazonaws.com/profilepictures/avatar_lokesh.png'
+}
+]
+date: 04/09/2024
+coverimage: "https://images.unsplash.com/photo-1581544291234-31340be4b1b8?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+picture: ""
+preview: "Want to know how to bridge the gap between languages?"
+---
+
+
+## Bridging the gap between languages
+
+## What is machine learning
+Imagine traveling the world, encountering new cultures and languages. But what if you can't understand the locals? Machine translation (MT) comes to the rescue! It's like having a digital translator in your pocket, instantly converting text from one language to another. Think of it as an automated version of human translator.
+
+## Why is Machine Translation Important?
+**Imagine this :💫** 
+
+You're browsing the web 🌐 and come across a fascinating article, but it's in a language you don't understand. You are desperate to access that information! Imagine you are on an adventure to a new country, and you want to bargain at a local market but can’t speak their language. 
+
+
+This is where MT empowers you to remove the language barrier. By now you might have encountered MT tools like Google Translate, Microsoft Translator or many others which essentially try to mitigate human translation.
+
+
+## Wondering how MT works?
+The magic behind machine translation comes from artificial intelligence (AI) techniques. It all started with Statistical Machine Translation (SMT), which uses statistics to identify patterns in languages. However, the real revolution came with Neural Machine Translation (NMT). These techniques have revolutionized this space by understanding the intricate relationships between languages.
+
+
+Let's deep dive into the different stages involved in this process.
+
+## Tokenization
+Imagine learning a new language. First, you learn the alphabet of the language, then words from these alphabets, and finally, sentences.  Machines need to do something like this. They too can't understand whole sentences at once! There should be some way of learning for Machines as well.
+Tokenization is the first process that breaks down text or sentences into smaller pieces called tokens. Here's how it works:
+![Tokenization](https://ui-mdx-files.s3.amazonaws.com/blog_images/mt_part1/MT_Part1_TK.png)
+
+There are many other tokenization techniques involved like Punctuation, Word tokenizer, Character tokenization and many more.
+By tokenizing the text, machines can start to understand the relationship between these smaller pieces and eventually translate entire sentences!
+
+## Word Embeddings
+We saw how tokenization breaks down sentences into smaller pieces (tokens). But computers only understand numbers! So, how do we bridge this gap?
+
+
+Word embedding comes into play! It's like assigning a unique number to each word, capturing its meaning and relationship to other words. The image below depicts a simple word embedding technique where each word in the English language is assigned a unique number based on its alphabetical order. For example, the character “H” is assigned with number 8 as it is in that position of the alphabet of the English language.
+
+![Word Embeddings](https://ui-mdx-files.s3.amazonaws.com/blog_images/mt_part1/MT_Part1_WE.png)
+
+
+
+This is a basic method, but it doesn't capture any deeper meaning of the word.
+More Powerful Techniques such as the Term Frequency-Inverse Document Frequency (TF-IDF) which considers the frequency of occurrence of words giving more weight to important words, and One-Hot Encoding where each word is represented by a list of 1 and 0’s according to vocabulary.
+
+
+Even these techniques are not sufficient to capture the relationship between words, advanced techniques like Word2Vec, Skip-gram, and BERT ( Bidirectional Encoder Representations) analyze massive amounts of text data to analyze how words are used in context, capturing semantic relationships between words. These techniques give a richer understanding of language, leading to more accurate and nuanced translations that you see in LLMs like ChatGPT, Llama or Gemini.
+
+## Positional Encoding in Machine Translation:
+
+Imagine rearranging the furniture in your living room - you know where each piece belongs. But if everything's thrown in a pile, it's hard to know what goes where. Machine translation faces a similar challenge!
+
+
+We've discussed how words are converted into numbers through word embedding. But sentences are more than just words - the order matters! Just like furniture position matters. That's where Positional Encoding (PE) comes in.
+
+
+One approach to computing PE is through 'Sine-Cosine Positional Encoding'. This method generates a vector using a specific formula. In the illustration below, you can observe that even positions in the vector are calculated using the sine function, while odd positions are calculated using the cosine function. This vector helps us understand the relative positions of words within a sentence.
+
+
+![Positional Encoding](https://ui-mdx-files.s3.amazonaws.com/blog_images/mt_part1/MT_Part1_PE.png)
+
+
+But where do we use this vector? Simple - we add it to the word embedded vector we discussed earlier. The resulting vector is what we use further in the model.
+In conclusion, we've covered the basics of machine translation, from tokenization to word embedding and now, positional encoding.
+
+
+In part 2 of this series, we'll delve into the transformer model and how we implement all these methods, along with others, in a simple language translator model that translates English text to Telugu. Stay tuned for more!
